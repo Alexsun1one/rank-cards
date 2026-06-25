@@ -45,6 +45,7 @@ Supporting checks (still must hold on the rendered image):
 - Rank numerals are legible on top of portraits.
 - The layout has one clear focal structure (covers).
 - Era and affiliation (jersey/prop) are consistent across all subjects.
+- If this is a README/gallery/showcase card, the visual register proves domain routing. A tea, poetry, city, book, or tool ranking should not look like a sports trading card unless the user explicitly asks for that tension.
 
 ## Regenerate
 

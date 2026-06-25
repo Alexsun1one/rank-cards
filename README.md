@@ -6,6 +6,7 @@
 
 ## 示例图
 
+<p><img src="examples/images/spring-tea-snacks-top7.png" alt="春日茶点人气榜" width="100%"><br><sub>生活方式榜单：排名卡不只适合球星，也适合食物、城市、书单和文化内容。</sub></p>
 <p><img src="examples/images/world-football-forwards-ranking-cr7-first.png" alt="世界足坛前锋历史排名卡" width="100%"><br><sub>世界足坛前锋历史排名卡</sub></p>
 
 ## 它能做什么

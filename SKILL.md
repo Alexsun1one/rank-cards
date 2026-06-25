@@ -27,6 +27,7 @@ A ranking card is not a pile of portraits with labels. It makes a claim, and a c
 10. Adapt props and criteria to the domain with `references/domain-adaptation.md`.
 11. Build the final image prompt with `references/prompt-template.md`; generate one card at a time with native title, basis line, tier labels, names, and short chips baked into the image pixels by the image model.
 12. Run QA with `references/qa-checklist.md`; regenerate if the register is wrong for the subject, portraits drift into collage, the basis is missing, tiers sprawl, or native names are unreadable.
+13. For README/gallery/showcase cards, include at least one non-sports domain. The skill must prove it can route to poets, foods, cities, books, tools, schools, cultural topics, or lifestyle rankings instead of defaulting every card to chrome/game/sports styling.
 
 ## Ranking Integrity Test
 

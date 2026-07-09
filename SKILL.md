@@ -16,18 +16,20 @@ A ranking card is not a pile of portraits with labels. It makes a claim, and a c
 ## Workflow
 
 1. Read the ranking idea: who or what is being ranked, and the angle.
-2. **Route the aesthetic register by subject** with `references/style-routing.md`: the subject picks the whole visual register — 古代诗人 → 水墨山水/文人画 with 神品/逸品 grades, 现代球星 → modern sports card, 西方作家 → 古典油画肖像. Never default everything to the sports look. This decides ground, portrait treatment, tier-label style, accents, and type before anything else.
-3. Pin the scope: 现役/历史, position-only, club vs country, peak vs career. An unscoped ranking is the #1 cause of bad-faith arguments.
-4. Choose the ranking basis from `references/tier-and-criteria.md`: 历史地位 / 巅峰统治力 / 荣誉 / 数据 / 影响力 / 时代调整. Pick one primary; optionally weight it. This goes ON the card.
-5. Pick a tier system that fits the register: one vocabulary, 3–6 tiers, top tier scarce (sports → S/A/B/C or 球王/超巨; poets → 神品/逸品/妙品/能品).
-6. List subjects and assign tiers; decide each subject's era / affiliation / source image.
-7. Run the Ranking Integrity Test: is the register routed, the basis stated and scoped, and will every subject pass one pipeline?
-8. Choose a layout archetype from `references/layout-archetypes.md` (cover → podium / versus / single-hero / pyramid; carousel → tier-row / grid).
-9. Lock the subject-image pipeline with `references/portrait-pipeline.md`, INSIDE the routed register — same crop, same ground, one treatment, same edge, one art register.
-10. Adapt props and criteria to the domain with `references/domain-adaptation.md`.
-11. Build the final image prompt with `references/prompt-template.md`; generate one card at a time with native title, basis line, tier labels, names, and short chips baked into the image pixels by the image model.
-12. Run QA with `references/qa-checklist.md`; regenerate if the register is wrong for the subject, portraits drift into collage, the basis is missing, tiers sprawl, or native names are unreadable.
-13. For README/gallery/showcase cards, include at least one non-sports domain. The skill must prove it can route to poets, foods, cities, books, tools, schools, cultural topics, or lifestyle rankings instead of defaulting every card to chrome/game/sports styling.
+2. **Route the asset** with `references/asset-routing-and-truth.md`: pick goat-pyramid / top-N / tier-list / before-after / carousel-page; lock the **exact order contract** (names + order + scores — NEVER invent rankings); record final container, ratio, text ownership; reroute single quotes → quote-cards, non-ranking covers → cover-pop, org structure → lego-town, cooperation → busy-town.
+3. **Route the aesthetic register by subject** with `references/style-routing.md`: the subject picks the whole visual register — 古代诗人 → 水墨山水/文人画 with 神品/逸品 grades, 现代球星 → modern sports card, 西方作家 → 古典油画肖像. Never default everything to the sports look. This decides ground, portrait treatment, tier-label style, accents, and type before anything else.
+4. Pin the scope: 现役/历史, position-only, club vs country, peak vs career. An unscoped ranking is the #1 cause of bad-faith arguments.
+5. Choose the ranking basis from `references/tier-and-criteria.md`: 历史地位 / 巅峰统治力 / 荣誉 / 数据 / 影响力 / 时代调整. Pick one primary; optionally weight it. This goes ON the card.
+6. Pick a tier system that fits the register: one vocabulary, 3–6 tiers, top tier scarce (sports → S/A/B/C or 球王/超巨; poets → 神品/逸品/妙品/能品).
+7. List subjects and assign tiers from the locked exact-order contract; decide each subject's era / affiliation / source image.
+8. Run the Ranking Integrity Test: is the asset role chosen, the order contract locked, the register routed, the basis stated and scoped, and will every subject pass one pipeline?
+9. Choose a layout archetype from `references/layout-archetypes.md` and hand off cover vs carousel with `references/layout-handoff.md` (cover → podium / versus / single-hero / pyramid at 3:4; carousel → tier-row / grid).
+10. Lock the subject-image pipeline with `references/portrait-pipeline.md`, INSIDE the routed register — same crop, same ground, one treatment, same edge, one art register.
+11. Adapt props and criteria to the domain with `references/domain-adaptation.md`.
+12. Plan native labels with `references/text-strategy.md` (name/rank/score budgets, exact-text block); build the final image prompt with `references/prompt-template.md`; generate one card at a time with native title, basis line, tier labels, names, and short chips baked into the image pixels by the image model.
+13. Run QA with `references/qa-checklist.md` plus `references/failure-patterns.md`; regenerate if ranks were invented, order drifted, the register is sports-locked on a non-sports subject, portraits go plastic/collage, the basis is missing, tiers sprawl, or native names are unreadable.
+14. For public/reusable cards, record the run with `references/prompt-records.md`.
+15. For README/gallery/showcase cards, include at least one non-sports domain. The skill must prove it can route to poets, foods, cities, books, tools, schools, cultural topics, or lifestyle rankings instead of defaulting every card to chrome/game/sports styling.
 
 ## Ranking Integrity Test
 
@@ -35,6 +37,8 @@ Before generating, answer:
 
 ```text
 rank card plan:
+- asset role: goat-pyramid / top-n / tier-list / before-after / carousel-page
+- exact order contract: name | tier-or-# | score? (LOCKED — never invent)
 - domain: 足球 / 篮球 / 作家 / 诗人 / 音乐家 / 导演 / 科学家 / 学校 / 城市 / 角色 / 产品 / ...
 - aesthetic register (routed by subject): 水墨山水 / 现代运动卡 / 古典油画肖像 / 编辑级肖像+网格 / 学院纹章 / ...
 - ranking question: e.g. 历史最强后卫
@@ -42,15 +46,18 @@ rank card plan:
 - basis: primary criterion (+ optional weights), PRINTED on the card
 - tier system: one vocabulary, 3-6 tiers, top tier scarce (1-3 names)
 - subjects: name | tier | era/jersey/photo choice
-- layout archetype:
+- layout archetype + ratio (cover 3:4 / carousel 1:1|3:4):
 - portrait pipeline: same crop / same background / one treatment / same edge / one art register
-- forbidden drift: 拼贴感 / 无依据 / tier 太多 / 名字看不清 / 低清混搭 / 标签混形
+- text ownership: native-in-image / outer-layout
+- if not Rank Cards, better owner: quote-cards / cover-pop / lego-town / busy-town / none
+- forbidden drift: 编造排名 / 顺序错乱 / 运动模板锁死 / 塑料脸 / 拼贴感 / 无依据 / tier 太多 / 名字看不清 / 低清混搭 / 标签混形
 ```
 
 Generate only when both gates pass their falsifiable test (not just a stated plan):
 
+- **Order-truth gate (falsifiable)** — every rendered name, tier, and score must match the locked exact-order contract character-for-character. Inventing a rank, swapping two names, or filling an empty GOAT tip fails the gate. If the user did not supply an order, ask or refuse — do not invent one.
 - **Credibility gate (falsifiable)** — the printed basis + scope must (a) be specific enough that swapping it would change at least one tier placement, and (b) survive the fan test: read the basis, then name the ONE placement the target fanbase would scream about; if that placement contradicts the stated basis, the basis is decoration — fix the tier. A basis that changes no placement is not a basis. Good: "按巅峰统治力，仅限现役中后卫。" Weak: "就是我觉得他强。"
-- **Unity gate (falsifiable)** — do not approve from the plan; approve from the blur-the-faces test in `references/qa-checklist.md`: heavy-blur the rendered card, and if any cell pops out by crop / tint / background / edge, the gate fails. Mixed crops, backgrounds, and art styles are the loudest amateur tell.
+- **Unity gate (falsifiable)** — do not approve from the plan; approve from the blur-the-faces test in `references/qa-checklist.md`: heavy-blur the rendered card, and if any cell pops out by crop / tint / background / edge, the gate fails. Mixed crops, backgrounds, and art styles are the loudest amateur tell. AI plastic portraits also fail.
 - **Basis-governs-tiers (falsifiable)** — run the basis-governs-tiers test in `references/tier-and-criteria.md`: for the 2 highest-ranked and the 1 most-debatable subject, write the one-line reason its tier follows from the printed criterion value; if you cannot, or the line contradicts the basis, move the subject, not the label.
 
 If any gate fails, fix the plan or regenerate before accepting.
@@ -83,6 +90,8 @@ The harness is domain-invariant. Only three adapters change — see `references/
 For planning, return:
 
 ```text
+asset role:
+exact order contract:
 domain:
 ranking question:
 scope:
@@ -90,9 +99,11 @@ basis (printed line):
 tier system & tiers:
 subjects (name | tier | era/jersey/photo):
 layout archetype:
+ratio / container:
 portrait pipeline (crop/background/treatment/edge/register):
 typography plan:
 native text plan:
+reroute (if any):
 final image prompt:
 QA risks:
 ```
@@ -101,6 +112,7 @@ For generation, produce one card at a time and report:
 
 - image path
 - aspect ratio (3:4 / 1:1 / 16:9)
+- asset role and locked exact-order contract
 - the basis line and scope as printed
 - the exact native text rendered: title, tiers, names, chips
 - whether all portraits share one pipeline
@@ -109,11 +121,16 @@ For generation, produce one card at a time and report:
 
 ## References
 
-- `references/style-routing.md`: route the aesthetic register by subject (poets → ink-wash, footballers → sports card) — read this FIRST.
+- `references/asset-routing-and-truth.md`: asset roles (GOAT pyramid / top-N / tier / before-after / carousel), exact-order truth, and reroutes to quote-cards / cover-pop / lego-town / busy-town — read this with style-routing.
+- `references/style-routing.md`: route the aesthetic register by subject (poets → ink-wash, footballers → sports card).
 - `references/style-dna.md`: the visual identity and anti-collage / anti-tier-maker rules.
 - `references/portrait-pipeline.md`: the unified portrait harness — the core of this skill.
 - `references/tier-and-criteria.md`: tier vocabularies, ranking basis, and the credibility line.
 - `references/layout-archetypes.md`: podium, versus, pyramid, tier-row, grid, single-hero.
+- `references/layout-handoff.md`: short-video cover vs carousel ratios and outer-layout handoff.
+- `references/text-strategy.md`: name/rank/score label budgets, exact-text, native text first.
 - `references/domain-adaptation.md`: how to map the harness onto sports, culture, characters, products.
 - `references/prompt-template.md`: planning, final generation, and text-fix edit templates.
+- `references/prompt-records.md`: audit trail for public/reusable ranking cards.
+- `references/failure-patterns.md`: invented ranks, sports-only lock, unreadable names, wrong order, plastic portraits.
 - `references/qa-checklist.md`: acceptance, regeneration, and repair rules.
